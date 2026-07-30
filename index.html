@@ -6,37 +6,19 @@
 <title>Lady Bag</title>
 
 <style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:#f8cdda;
-}
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:Arial;background:#f8cdda;}
 
-/* NAVBAR */
 nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:15px 30px;
 }
+nav .logo{color:#e91e63;font-weight:bold;font-size:22px;}
+nav ul{list-style:none;display:flex;gap:20px;}
+nav a{text-decoration:none;color:black;}
 
-nav .logo{
-  color:#e91e63;
-  font-weight:bold;
-  font-size:22px;
-}
-
-nav ul{
-  list-style:none;
-  display:flex;
-  gap:20px;
-}
-
-nav ul li{
-  cursor:pointer;
-}
-
-/* HERO */
 .hero{
   display:flex;
   align-items:center;
@@ -44,20 +26,9 @@ nav ul li{
   padding:40px;
   flex-wrap:wrap;
 }
-
-.hero-text{
-  max-width:500px;
-}
-
-.hero-text h1{
-  font-size:50px;
-  color:#b23a48;
-}
-
-.hero-text p{
-  color:#444;
-  margin:10px 0;
-}
+.hero-text{max-width:500px;}
+.hero-text h1{font-size:50px;color:#b23a48;}
+.hero-text p{color:#444;margin:10px 0;}
 
 .shop-btn{
   display:inline-block;
@@ -67,48 +38,16 @@ nav ul li{
   color:white;
   border-radius:30px;
   text-decoration:none;
-  animation:pulse 2s infinite;
 }
 
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(233,30,99,.6)}
-  70%{box-shadow:0 0 0 15px rgba(233,30,99,0)}
-  100%{box-shadow:0 0 0 0 rgba(233,30,99,0)}
-}
+.hero img{width:300px;border-radius:20px;}
 
-/* IMAGE */
-.hero img{
-  width:300px;
-  border-radius:20px;
-}
+.products{padding:20px;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;}
 
-/* PRODUCTS */
-.products{
-  padding:20px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-}
-
-.card{
-  background:#ffe4ec;
-  padding:15px;
-  border-radius:15px;
-  text-align:center;
-}
-
-.card img{
-  width:100%;
-  border-radius:10px;
-}
-
-.price{
-  color:#e91e63;
-  font-weight:bold;
-}
+.card{background:#ffe4ec;padding:15px;border-radius:15px;text-align:center;}
+.card img{width:100%;border-radius:10px;}
+.price{color:#e91e63;font-weight:bold;}
 
 .btn{
   display:inline-block;
@@ -120,28 +59,22 @@ nav ul li{
   text-decoration:none;
 }
 
-footer{
-  text-align:center;
-  padding:20px;
-  color:#e91e63;
-}
+footer{text-align:center;padding:20px;color:#e91e63;}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="logo">Lady Bag</div>
   <ul>
-    <li>الرئيسية</li>
-    <li>المنتجات</li>
-    <li>من نحن</li>
-    <li>تواصل معنا</li>
+    <li><a href="#">الرئيسية</a></li>
+    <li><a href="#shop">المنتجات</a></li>
+    <li><a href="#about">من نحن</a></li>
+    <li><a href="#contact">تواصل معنا</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-text">
     <h1>LADY BAG</h1>
@@ -149,11 +82,9 @@ footer{
     <p>اكتشفي تشكيلتنا الجديدة من الحقائب بتصميم راقي وجودة عالية</p>
     <a href="#shop" class="shop-btn">SHOP NOW →</a>
   </div>
-
   <img src="bag3.jpeg">
 </div>
 
-<!-- PRODUCTS -->
 <div id="shop" class="products">
   <div class="grid">
 
@@ -188,9 +119,23 @@ footer{
   </div>
 </div>
 
-<footer>
-© 2026 | Lady Bag Collection
-</footer>
+<div id="about" style="padding:40px;text-align:center;background:#ffe4ec;">
+  <h2 style="color:#e91e63;">من نحن</h2>
+  <p style="max-width:600px;margin:auto;color:#444;line-height:1.8;">
+    نحن متجر Lady Bag متخصصون في تقديم أحدث صيحات الشنط النسائية بجودة عالية وتصميمات عصرية تناسب كل الأذواق 💖
+  </p>
+</div>
+
+<div id="contact" style="padding:40px;text-align:center;">
+  <h2 style="color:#e91e63;">تواصل معنا</h2>
+  <p>للطلب أو الاستفسار تواصل معنا على واتساب</p>
+  <a href="https://wa.me/201023256648" target="_blank"
+     style="display:inline-block;margin-top:15px;padding:15px 30px;background:#25D366;color:white;border-radius:30px;text-decoration:none;">
+     💬 كلمنا على واتساب
+  </a>
+</div>
+
+<footer>© 2026 | Lady Bag Collection</footer>
 
 </body>
 </html>
