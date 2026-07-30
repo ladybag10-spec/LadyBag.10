@@ -9,10 +9,13 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
 body{background:#f8c8d8;}
 .hero{height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;}
-.logo img{width:260px;}
-.enter-btn{margin-top:40px;padding:15px 40px;background:#ff4f8b;color:white;border:none;border-radius:30px;}
+.logo img{width:260px;animation: float 3s ease-in-out infinite;}
+.enter-btn{margin-top:40px;padding:15px 40px;background:#ff4f8b;color:white;border:none;border-radius:30px;font-size:18px;}
 .products{display:none;padding:30px;background:#f8c8d8;}
+.products h2{color:#ff4f8b;text-align:center;margin-bottom:30px;}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.card h3,.card p{text-align:center;color:#ff4f8b;}
+.order-btn{display:block;margin:10px auto;padding:10px;background:#25D366;color:white;text-decoration:none;border-radius:8px;width:80%;text-align:center;}
 .slider{position:relative;}
 .slider img{width:100%;border-radius:10px;}
 .arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,79,139,0.8);color:white;width:35px;height:35px;display:flex;align-items:center;justify-content:center;border-radius:50%;cursor:pointer;}
@@ -20,17 +23,19 @@ body{background:#f8c8d8;}
 .right{right:10px;}
 .show-products .hero{display:none;}
 .show-products .products{display:block;}
+@keyframes float{0%{transform:translateY(0);}50%{transform:translateY(-20px);}100%{transform:translateY(0);}}
 </style>
 </head>
 
 <body>
 
 <div class="hero">
-<img src="logo.jpeg">
+<div class="logo"><img src="logo.jpeg"></div>
 <button class="enter-btn" onclick="enterShop()">Enter Shop</button>
 </div>
 
 <div class="products">
+<h2>Lady Bag Collection</h2>
 <div class="grid">
 
 <div class="card">
@@ -39,6 +44,9 @@ body{background:#f8c8d8;}
 <img id="img1" src="bag1.jpeg">
 <span class="arrow right" onclick="nextImage('img1')">❯</span>
 </div>
+<h3>Black Bag</h3>
+<p>LE 799</p>
+<a class="order-btn" href="https://wa.me/201000000000?text=عايز اطلب Black Bag">اطلب الآن</a>
 </div>
 
 <div class="card">
@@ -47,6 +55,9 @@ body{background:#f8c8d8;}
 <img id="img2" src="bag2.jpeg">
 <span class="arrow right" onclick="nextImage('img2')">❯</span>
 </div>
+<h3>White Bag</h3>
+<p>LE 899</p>
+<a class="order-btn" href="https://wa.me/201000000000?text=عايز اطلب White Bag">اطلب الآن</a>
 </div>
 
 <div class="card">
@@ -55,6 +66,9 @@ body{background:#f8c8d8;}
 <img id="img3" src="bag3.jpeg">
 <span class="arrow right" onclick="nextImage('img3')">❯</span>
 </div>
+<h3>Pink Bag</h3>
+<p>LE 750</p>
+<a class="order-btn" href="https://wa.me/201000000000?text=عايز اطلب Pink Bag">اطلب الآن</a>
 </div>
 
 <div class="card">
@@ -63,6 +77,9 @@ body{background:#f8c8d8;}
 <img id="img4" src="bag4.jpeg">
 <span class="arrow right" onclick="nextImage('img4')">❯</span>
 </div>
+<h3>Mini Bag</h3>
+<p>LE 650</p>
+<a class="order-btn" href="https://wa.me/201000000000?text=عايز اطلب Mini Bag">اطلب الآن</a>
 </div>
 
 </div>
