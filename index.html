@@ -115,10 +115,33 @@ footer{
   padding:20px;
   color:#e91e63;
 }
+
+.logo{animation:glow 2s infinite alternate;}
+@keyframes glow{from{transform:scale(1);text-shadow:0 0 5px #ff5fa2}to{transform:scale(1.08);text-shadow:0 0 20px #ff1493}}
+body{background:linear-gradient(135deg,#ffd6e7,#ffeaf3);background-size:300% 300%;animation:bgMove 8s ease infinite}
+@keyframes bgMove{0%{background-position:left}50%{background-position:right}100%{background-position:left}}
+.gradient-text{animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.card{transition:.4s;animation:fadeUp .8s ease}
+.card:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 20px 35px rgba(233,30,99,.3)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.product-img{transition:.5s}
+.product-img:hover{transform:scale(1.08) rotate(2deg)}
+.btn{animation:pulse 2s infinite}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);justify-content:center;align-items:center;z-index:9999}
+.lightbox img{max-width:90%;max-height:90%;border-radius:15px}
+</style>
+
+<style>
+#loader{position:fixed;inset:0;background:#ffd6e7;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:bold;color:#e91e63;z-index:10000;animation:fadeout .8s forwards;animation-delay:1.2s}
+@keyframes fadeout{to{opacity:0;visibility:hidden}}
+#topBtn{position:fixed;bottom:20px;right:20px;background:#e91e63;color:#fff;border:none;padding:12px 15px;border-radius:50%;cursor:pointer}
+.ribbon{background:#e91e63;color:#fff;text-align:center;padding:8px;font-weight:bold;animation:pulse 2s infinite}
 </style>
 </head>
 
-<body>
+<body><div id="loader">Lady Bag ✨</div>
 
 <!-- NAV -->
 <nav>
@@ -141,7 +164,7 @@ footer{
   </div>
 
   <div class="hero-img">
-  <img src="bag3.png">
+  <a href="bag3.png" class="open-img"><img src="bag3.png" class="product-img"></a>
 </div>
 </div>
 
@@ -150,28 +173,28 @@ footer{
   <div class="grid">
 
     <div class="card">
-      <img src="bag1.png">
-      <h3>Black Bag</h3>
-      <p class="price">LE 799</p>
+      <a href="IMG_9641.png" class="open-img"><img src="IMG_9641.png" class="product-img"></a>
+      <h3>Lady Bag</h3>
+      <p class="price">LE 350</p>
       <a class="btn" href="https://wa.me/201023256648">اطلب الآن</a>
     </div>
 
     <div class="card">
-      <img src="bag2.jpeg">
+      <a href="bag2.jpeg" class="open-img"><img src="bag2.jpeg" class="product-img"></a>
       <h3>White Bag</h3>
       <p class="price">LE 899</p>
       <a class="btn" href="https://wa.me/201023256648">اطلب الآن</a>
     </div>
 
     <div class="card">
-      <img src="bag3.jpeg">
+      <a href="bag3.jpeg" class="open-img"><img src="bag3.jpeg" class="product-img"></a>
       <h3>Pink Bag</h3>
       <p class="price">LE 750</p>
       <a class="btn" href="https://wa.me/201023256648">اطلب الآن</a>
     </div>
 
     <div class="card">
-      <img src="bag4.jpeg">
+      <a href="bag4.jpeg" class="open-img"><img src="bag4.jpeg" class="product-img"></a>
       <h3>Mini Bag</h3>
       <p class="price">LE 650</p>
       <a class="btn" href="https://wa.me/201023256648">اطلب الآن</a>
@@ -208,9 +231,16 @@ footer{
   </a>
 </div>
 
+<div class="lightbox" id="lb"><img id="lbimg"></div>
+<script>
+document.querySelectorAll('.open-img').forEach(a=>{
+a.onclick=e=>{e.preventDefault();lb.style.display='flex';lbimg.src=a.href;}
+});
+lb.onclick=()=>lb.style.display='none';
+</script>
 <footer>
 © 2026 | Lady Bag Collection
 </footer>
 
-</body>
+<button id="topBtn">↑</button><script>window.onscroll=()=>topBtn.style.display=scrollY>200?"block":"none";topBtn.onclick=()=>scrollTo({top:0,behavior:"smooth"});document.querySelectorAll(".card").forEach((c,i)=>{c.style.animationDelay=(i*.15)+"s"});</script></body>
 </html>
