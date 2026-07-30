@@ -9,84 +9,60 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
 body{background:#f8c8d8;}
 .hero{height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;}
-.logo img{width:260px;animation: float 3s ease-in-out infinite;}
-.shadow{width:140px;height:18px;background:rgba(0,0,0,0.2);border-radius:50%;margin-top:15px;animation: shadow 3s ease-in-out infinite;}
-.enter-btn{margin-top:40px;padding:15px 40px;background:#ff4f8b;color:white;border:none;border-radius:30px;font-size:18px;cursor:pointer;}
-.products{display:none;padding:30px;background:#f8c8d8;min-height:100vh;}
-.products h2{color:#ff4f8b;text-align:center;margin-bottom:30px;}
+.logo img{width:260px;}
+.enter-btn{margin-top:40px;padding:15px 40px;background:#ff4f8b;color:white;border:none;border-radius:30px;}
+.products{display:none;padding:30px;background:#f8c8d8;}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
-.card img{width:100%;border-radius:10px;}
-.card h3,.card p{color:#ff4f8b;text-align:center;}
-.order-btn{display:block;margin:10px auto;padding:10px;background:#25D366;color:white;text-align:center;text-decoration:none;border-radius:8px;width:80%;}
 .slider{position:relative;}
 .slider img{width:100%;border-radius:10px;}
-.arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,79,139,0.8);color:white;width:35px;height:35px;display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:50%;}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,79,139,0.8);color:white;width:35px;height:35px;display:flex;align-items:center;justify-content:center;border-radius:50%;cursor:pointer;}
 .left{left:10px;}
 .right{right:10px;}
 .show-products .hero{display:none;}
 .show-products .products{display:block;}
-@keyframes float{0%{transform:translateY(0);}50%{transform:translateY(-20px);}100%{transform:translateY(0);}}
-@keyframes shadow{0%{transform:scale(1);opacity:.3;}50%{transform:scale(1.2);opacity:.1;}100%{transform:scale(1);opacity:.3;}}
 </style>
 </head>
 
 <body>
 
 <div class="hero">
-<div class="logo">
 <img src="logo.jpeg">
-</div>
-<div class="shadow"></div>
 <button class="enter-btn" onclick="enterShop()">Enter Shop</button>
 </div>
 
 <div class="products">
-<h2>Lady Bag Collection</h2>
-
 <div class="grid">
 
 <div class="card">
 <div class="slider">
 <span class="arrow left" onclick="prevImage('img1')">❮</span>
-<img id="img1" src="bag1.jpg">
+<img id="img1" src="bag1.jpeg">
 <span class="arrow right" onclick="nextImage('img1')">❯</span>
 </div>
-<h3>Black Bag</h3>
-<p>LE 799</p>
-<a class="order-btn" href="https://wa.me/201000000000?text=عايز اطلب Black Bag" target="_blank">اطلب الآن</a>
 </div>
 
 <div class="card">
 <div class="slider">
 <span class="arrow left" onclick="prevImage('img2')">❮</span>
-<img id="img2" src="bag2.jpg">
+<img id="img2" src="bag2.jpeg">
 <span class="arrow right" onclick="nextImage('img2')">❯</span>
 </div>
-<h3>White Bag</h3>
-<p>LE 899</p>
-<a class="order-btn" href="https://wa.me/201000000000?text=عايز اطلب White Bag" target="_blank">اطلب الآن</a>
 </div>
 
 <div class="card">
 <div class="slider">
 <span class="arrow left" onclick="prevImage('img3')">❮</span>
-<img id="img3" src="bag3.jpg">
+<img id="img3" src="bag3.jpeg">
 <span class="arrow right" onclick="nextImage('img3')">❯</span>
 </div>
-<h3>Pink Bag</h3>
-<p>LE 750</p>
-<a class="order-btn" href="https://wa.me/201000000000?text=عايز اطلب Pink Bag" target="_blank">اطلب الآن</a>
 </div>
 
 <div class="card">
 <div class="slider">
 <span class="arrow left" onclick="prevImage('img4')">❮</span>
-<img id="img4" src="bag4.jpg">
+<img id="img4" src="bag4.jpeg">
 <span class="arrow right" onclick="nextImage('img4')">❯</span>
 </div>
-<h3>Mini Bag</h3>
-<p>LE 650</p>
-<a class="order-btn" href="https://wa.me/01023256648?text=عايز اطلب Mini Bag" target="_blank">اطلب الآن</a>
 </div>
 
 </div>
@@ -96,10 +72,10 @@ body{background:#f8c8d8;}
 function enterShop(){document.body.classList.add("show-products");}
 
 const images={
-img1:["bag1.jpg","bag1_2.jpg","bag1_3.jpg"],
-img2:["bag2.jpg","bag2_2.jpg","bag2_3.jpg"],
-img3:["bag3.jpg","bag3_2.jpg","bag3_3.jpg"],
-img4:["bag4.jpg","bag4_2.jpg","bag4_3.jpg"]
+img1:["bag1.jpeg","bag1_2.jpeg","bag1_3.jpeg"],
+img2:["bag2.jpeg","bag2_2.jpeg","bag2_3.jpeg"],
+img3:["bag3.jpeg","bag3_2.jpeg","bag3_3.jpeg"],
+img4:["bag4.jpeg","bag4_2.jpeg","bag4_3.jpeg"]
 };
 
 let currentIndex={img1:0,img2:0,img3:0,img4:0};
