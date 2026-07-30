@@ -17,8 +17,15 @@ body{background:#f8c8d8;}
 .card h3,.card p{text-align:center;color:#ff4f8b;}
 .order-btn{display:block;margin:10px auto;padding:10px;background:#25D366;color:white;text-decoration:none;border-radius:8px;width:80%;text-align:center;}
 .slider{position:relative;}
-.slider img{width:100%;border-radius:10px;}
-.arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,79,139,0.8);color:white;width:35px;height:35px;display:flex;align-items:center;justify-content:center;border-radius:50%;cursor:pointer;}
+.slider img{width:100%;border-radius:10px;cursor:pointer;}
+.arrow{
+position:absolute;top:50%;transform:translateY(-50%);
+background:rgba(255,79,139,0.8);color:white;
+width:35px;height:35px;display:flex;align-items:center;justify-content:center;
+border-radius:50%;cursor:pointer;
+opacity:0;transition:0.3s;
+}
+.slider:hover .arrow{opacity:1;}
 .left{left:10px;}
 .right{right:10px;}
 .show-products .hero{display:none;}
@@ -41,18 +48,18 @@ body{background:#f8c8d8;}
 <div class="card">
 <div class="slider">
 <span class="arrow left" onclick="prevImage('img1')">❮</span>
-<img id="img1" src="bag1.jpeg">
+<img id="img1" src="bag1.jpeg" onclick="openImage(this.src)">
 <span class="arrow right" onclick="nextImage('img1')">❯</span>
 </div>
 <h3>Black Bag</h3>
-<p>LE 260</p>
+<p>LE 799</p>
 <a class="order-btn" href="https://wa.me/201000000000?text=عايز اطلب Black Bag">اطلب الآن</a>
 </div>
 
 <div class="card">
 <div class="slider">
 <span class="arrow left" onclick="prevImage('img2')">❮</span>
-<img id="img2" src="bag2.jpeg">
+<img id="img2" src="bag2.jpeg" onclick="openImage(this.src)">
 <span class="arrow right" onclick="nextImage('img2')">❯</span>
 </div>
 <h3>White Bag</h3>
@@ -63,7 +70,7 @@ body{background:#f8c8d8;}
 <div class="card">
 <div class="slider">
 <span class="arrow left" onclick="prevImage('img3')">❮</span>
-<img id="img3" src="bag3.jpeg">
+<img id="img3" src="bag3.jpeg" onclick="openImage(this.src)">
 <span class="arrow right" onclick="nextImage('img3')">❯</span>
 </div>
 <h3>Pink Bag</h3>
@@ -74,7 +81,7 @@ body{background:#f8c8d8;}
 <div class="card">
 <div class="slider">
 <span class="arrow left" onclick="prevImage('img4')">❮</span>
-<img id="img4" src="bag4.jpeg">
+<img id="img4" src="bag4.jpeg" onclick="openImage(this.src)">
 <span class="arrow right" onclick="nextImage('img4')">❯</span>
 </div>
 <h3>Mini Bag</h3>
@@ -87,6 +94,10 @@ body{background:#f8c8d8;}
 
 <script>
 function enterShop(){document.body.classList.add("show-products");}
+
+function openImage(src){
+  window.open(src, "_blank");
+}
 
 const images={
 img1:["bag1.jpeg","bag1_2.jpeg","bag1_3.jpeg"],
