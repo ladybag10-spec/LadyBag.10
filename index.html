@@ -9,27 +9,43 @@
 html{scroll-behavior:smooth;}
 body{margin:0;font-family:Arial;background:#f8cdda;}
 
+/* NAV */
 nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:15px 30px;
 }
-nav .logo{color:#e91e63;font-weight:bold;font-size:22px;}
+.logo{color:#e91e63;font-weight:bold;font-size:22px;}
 nav ul{list-style:none;display:flex;gap:20px;}
-nav a{text-decoration:none;color:black;}
+nav a{text-decoration:none;color:black;font-weight:bold;}
 
+/* HERO */
 .hero{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:40px;
+  padding:50px;
+  background:linear-gradient(135deg,#f8cdda,#fcb6d0);
   flex-wrap:wrap;
 }
-.hero-text{max-width:500px;}
-.hero-text h1{font-size:50px;color:#b23a48;}
-.hero-text p{color:#444;margin:10px 0;}
 
+.hero-text{max-width:500px;}
+
+.gradient-text{
+  font-size:60px;
+  font-weight:bold;
+  background:linear-gradient(45deg,#e91e63,#ff4081,#c2185b);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero-text p{
+  color:#444;
+  margin:10px 0;
+}
+
+/* زرار */
 .shop-btn{
   display:inline-block;
   margin-top:20px;
@@ -38,17 +54,39 @@ nav a{text-decoration:none;color:black;}
   color:white;
   border-radius:30px;
   text-decoration:none;
+  box-shadow:0 10px 20px rgba(233,30,99,0.4);
 }
 
-.hero img{width:300px;border-radius:20px;}
+/* صورة 3D */
+.hero-img img{
+  width:320px;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.2);
+  transform:rotate(-5deg) scale(1.05);
+  transition:0.3s;
+}
+.hero-img img:hover{
+  transform:rotate(0deg) scale(1.1);
+}
 
+/* PRODUCTS */
 .products{padding:20px;}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;}
-
-.card{background:#ffe4ec;padding:15px;border-radius:15px;text-align:center;}
-.card img{width:100%;border-radius:10px;}
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+.card{
+  background:#ffe4ec;
+  padding:15px;
+  border-radius:15px;
+  text-align:center;
+}
+.card img{
+  width:100%;
+  border-radius:10px;
+}
 .price{color:#e91e63;font-weight:bold;}
-
 .btn{
   display:inline-block;
   margin-top:10px;
@@ -59,12 +97,30 @@ nav a{text-decoration:none;color:black;}
   text-decoration:none;
 }
 
-footer{text-align:center;padding:20px;color:#e91e63;}
+/* ABOUT */
+#about{
+  padding:40px;
+  text-align:center;
+  background:#ffe4ec;
+}
+
+/* CONTACT */
+#contact{
+  padding:40px;
+  text-align:center;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  color:#e91e63;
+}
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
   <div class="logo">Lady Bag</div>
   <ul>
@@ -75,16 +131,21 @@ footer{text-align:center;padding:20px;color:#e91e63;}
   </ul>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
   <div class="hero-text">
-    <h1>LADY BAG</h1>
+    <h1 class="gradient-text">LADY BAG</h1>
     <p>أناقة تدوم لكل يوم 💖</p>
     <p>اكتشفي تشكيلتنا الجديدة من الحقائب بتصميم راقي وجودة عالية</p>
     <a href="#shop" class="shop-btn">SHOP NOW →</a>
   </div>
-  <img src="bag3.jpeg">
+
+  <div class="hero-img">
+    <img src="bag3.jpeg">
+  </div>
 </div>
 
+<!-- PRODUCTS -->
 <div id="shop" class="products">
   <div class="grid">
 
@@ -119,24 +180,35 @@ footer{text-align:center;padding:20px;color:#e91e63;}
   </div>
 </div>
 
-<div id="about" style="padding:40px;text-align:center;background:#ffe4ec;">
+<!-- ABOUT -->
+<div id="about">
   <h2 style="color:#e91e63;">من نحن</h2>
+
   <p style="max-width:600px;margin:auto;color:#444;line-height:1.8;">
-نحن Lady Bag، نقدم لكِ أحدث الشنط النسائية بجودة عالية وتصميمات عصرية تناسب كل الأذواق 💖  
-هدفنا هو الجمع بين الأناقة والسعر المناسب مع تجربة شراء سهلة وسريعة ✨
-</p>
+    نحن <strong>Lady Bag</strong> علامة متخصصة في تقديم أحدث صيحات الشنط النسائية العصرية 💖  
+    نؤمن أن الشنطة ليست مجرد إكسسوار، بل تعبير عن أناقتك وشخصيتك.
+  </p>
+
+  <p style="max-width:600px;margin:15px auto;color:#444;line-height:1.8;">
+    نحرص على اختيار أفضل الخامات وتقديم تصميمات مميزة تناسب جميع الأذواق،  
+    مع تجربة شراء سهلة وسريعة ✨
+  </p>
 </div>
 
-<div id="contact" style="padding:40px;text-align:center;">
+<!-- CONTACT -->
+<div id="contact">
   <h2 style="color:#e91e63;">تواصل معنا</h2>
   <p>للطلب أو الاستفسار تواصل معنا على واتساب</p>
+
   <a href="https://wa.me/201023256648" target="_blank"
      style="display:inline-block;margin-top:15px;padding:15px 30px;background:#25D366;color:white;border-radius:30px;text-decoration:none;">
      💬 كلمنا على واتساب
   </a>
 </div>
 
-<footer>© 2026 | Lady Bag Collection</footer>
+<footer>
+© 2026 | Lady Bag Collection
+</footer>
 
 </body>
 </html>
