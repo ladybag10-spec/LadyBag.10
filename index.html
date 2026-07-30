@@ -98,6 +98,38 @@ width:80%;
 50%{transform:scale(1.2);opacity:.1;}
 100%{transform:scale(1);opacity:.3;}
 }
+.slider{
+position:relative;
+}
+
+.slider img{
+width:100%;
+border-radius:10px;
+}
+
+.arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(255, 79, 139, 0.8);
+color:white;
+width:35px;
+height:35px;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+border-radius:50%;
+font-size:18px;
+}
+
+.left{
+left:10px;
+}
+
+.right{
+right:10px;
+}  
 </style>
 </head>
 
@@ -117,21 +149,39 @@ width:80%;
 <div class="grid">
 
 <div class="card">
-<img src="bag1.jpg">
+<div class="slider">
+  <span class="arrow left" onclick="prevImage('img1')">❮</span>
+
+  <img id="img1" src="bag1.jpg">
+
+  <span class="arrow right" onclick="nextImage('img1')">❯</span>
+</div>
 <h3>Black Bag</h3>
 <p>LE 799</p>
 <a class="order-btn" href="https://wa.me/201000000000?text=عايز اطلب Black Bag" target="_blank">اطلب الآن</a>
 </div>
 
 <div class="card">
-<img src="bag2.jpg">
+<div class="slider">
+  <span class="arrow left" onclick="prevImage('img2')">❮</span>
+
+  <img id="img2" src="bag2.jpg">
+
+  <span class="arrow right" onclick="nextImage('img2')">❯</span>
+</div>
 <h3>White Bag</h3>
 <p>LE 899</p>
 <a class="order-btn" href="https://wa.me/201000000000?text=عايز اطلب White Bag" target="_blank">اطلب الآن</a>
 </div>
 
 <div class="card">
-<img src="bag3.jpg">
+<div class="slider">
+  <span class="arrow left" onclick="prevImage('img3')">❮</span>
+
+  <img id="img3" src="bag3.jpg">
+
+  <span class="arrow right" onclick="nextImage('img3')">❯</span>
+</div>
 <h3>Pink Bag</h3>
 <p>LE 750</p>
 <a class="order-btn" href="https://wa.me/201000000000?text=عايز اطلب Pink Bag" target="_blank">اطلب الآن</a>
@@ -148,9 +198,48 @@ width:80%;
 </div>
 
 <script>
-function enterShop(){
-document.body.classList.add("show-products");
+const images = {
+  img1: ["bag1.jpg", "bag1_2.jpg", "bag1_3.jpg"],
+  img2: ["bag2.jpg", "bag2_2.jpg", "bag2_3.jpg"],
+  img3: ["bag3.jpg", "bag3_2.jpg", "bag3_3.jpg"]
+};
+
+let currentIndex = {
+  img1: 0,
+  img2: 0,
+  img3: 0
+};
+
+function nextImage(id){
+  currentIndex[id]++;
+  if(currentIndex[id] >= images[id].length){
+    currentIndex[id] = 0;
+  }
+  document.getElementById(id).src = images[id][currentIndex[id]];
 }
+
+function prevImage(id){
+  currentIndex[id]--;
+  if(currentIndex[id] < 0){
+    currentIndex[id] = images[id].length - 1;
+  }
+  document.getElementById(id).src = images[id][currentIndex[id]];
+}
+  
+  if(currentIndex[id] >= images[id].length){
+    currentIndex[id] = 0;
+  }
+  document.getElementById(id).src = images[id][currentIndex[id]];
+}
+
+function prevImage(id){
+  currentIndex[id]--;
+  if(currentIndex[id] < 0){
+    currentIndex[id] = images[id].length - 1;
+  }
+  document.getElementById(id).src = images[id][currentIndex[id]];
+}
+
 </script>
 
 </body>
