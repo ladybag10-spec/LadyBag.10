@@ -1,246 +1,192 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lady Bag</title>
+<title>متجر العطور</title>
 
 <style>
-html{scroll-behavior:smooth;}
-body{margin:0;font-family:Arial;background:#f8cdda;}
-
-/* NAV */
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 30px;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
-.logo{color:#e91e63;font-weight:bold;font-size:22px;}
-nav ul{list-style:none;display:flex;gap:20px;}
-nav a{text-decoration:none;color:black;font-weight:bold;}
 
-/* HERO */
+body{
+background:#f4f4f4;
+}
+
+header{
+background:#111;
+color:#fff;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header h1{
+font-size:28px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 10px;
+font-size:18px;
+}
+
 .hero{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:50px;
-  background:linear-gradient(135deg,#f8cdda,#fcb6d0);
-  flex-wrap:wrap;
+height:400px;
+background:linear-gradient(to right,#000,#444);
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
 }
 
-.hero-text{max-width:500px;}
-
-.gradient-text{
-  font-size:60px;
-  font-weight:bold;
-  background:linear-gradient(45deg,#e91e63,#ff4081,#c2185b);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+.hero h2{
+font-size:40px;
+margin-bottom:10px;
 }
 
-.hero-text p{
-  color:#444;
-  margin:10px 0;
+.hero p{
+font-size:20px;
+margin-bottom:20px;
 }
 
-/* زرار */
-.shop-btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:15px 30px;
-  background:linear-gradient(45deg,#e91e63,#ff4081);
-  color:white;
-  border-radius:30px;
-  text-decoration:none;
-  box-shadow:0 10px 20px rgba(233,30,99,0.4);
+.hero button{
+padding:15px 35px;
+border:none;
+background:gold;
+font-size:18px;
+cursor:pointer;
+border-radius:8px;
 }
 
-/* صورة 3D */
-.hero-img img{
-  width:320px;
-  border-radius:20px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.2);
-  transform:rotate(-5deg) scale(1.05);
-  transition:0.3s;
-}
-.hero-img img:hover{
-  transform:rotate(0deg) scale(1.1);
+.products{
+padding:50px;
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
 }
 
-/* PRODUCTS */
-.products{padding:20px;}
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-}
 .card{
-  background:#ffe4ec;
-  padding:15px;
-  border-radius:15px;
-  text-align:center;
+background:white;
+width:280px;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 0 10px rgba(0,0,0,.2);
+transition:.3s;
 }
+
+.card:hover{
+transform:translateY(-10px);
+}
+
 .card img{
-  width:100%;
-  border-radius:10px;
-}
-.price{color:#e91e63;font-weight:bold;}
-.btn{
-  display:inline-block;
-  margin-top:10px;
-  padding:10px 20px;
-  background:#25D366;
-  color:white;
-  border-radius:10px;
-  text-decoration:none;
+width:100%;
+height:250px;
+object-fit:cover;
 }
 
-/* ABOUT */
-#about{
-  padding:40px;
-  text-align:center;
-  background:#ffe4ec;
+.card h3{
+padding:15px;
 }
 
-/* CONTACT */
-#contact{
-  padding:40px;
-  text-align:center;
+.card p{
+padding:0 15px 15px;
+color:#666;
+}
+
+.card button{
+margin:15px;
+width:calc(100% - 30px);
+padding:12px;
+background:black;
+color:white;
+border:none;
+cursor:pointer;
+border-radius:6px;
 }
 
 footer{
-  text-align:center;
-  padding:20px;
-  color:#e91e63;
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
 }
-
-.logo{animation:glow 2s infinite alternate;}
-@keyframes glow{from{transform:scale(1);text-shadow:0 0 5px #ff5fa2}to{transform:scale(1.08);text-shadow:0 0 20px #ff1493}}
-body{background:linear-gradient(135deg,#ffd6e7,#ffeaf3);background-size:300% 300%;animation:bgMove 8s ease infinite}
-@keyframes bgMove{0%{background-position:left}50%{background-position:right}100%{background-position:left}}
-.gradient-text{animation:float 3s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.card{transition:.4s;animation:fadeUp .8s ease}
-.card:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 20px 35px rgba(233,30,99,.3)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-.product-img{transition:.5s}
-.product-img:hover{transform:scale(1.08) rotate(2deg)}
-.btn{animation:pulse 2s infinite}
-@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
-.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);justify-content:center;align-items:center;z-index:9999}
-.lightbox img{max-width:90%;max-height:90%;border-radius:15px}
 </style>
 
-<style>
-#loader{position:fixed;inset:0;background:#ffd6e7;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:bold;color:#e91e63;z-index:10000;animation:fadeout .8s forwards;animation-delay:1.2s}
-@keyframes fadeout{to{opacity:0;visibility:hidden}}
-#topBtn{position:fixed;bottom:20px;right:20px;background:#e91e63;color:#fff;border:none;padding:12px 15px;border-radius:50%;cursor:pointer}
-.ribbon{background:#e91e63;color:#fff;text-align:center;padding:8px;font-weight:bold;animation:pulse 2s infinite}
-</style>
 </head>
+<body>
 
-<body><div id="loader">Lady Bag ✨</div>
+<header>
 
-<!-- NAV -->
+<h1>🌸 متجر العطور</h1>
+
 <nav>
-  <div class="logo">Lady Bag</div>
-  <ul>
-    <li><a href="#">الرئيسية</a></li>
-    <li><a href="#shop">المنتجات</a></li>
-    <li><a href="#about">من نحن</a></li>
-    <li><a href="#contact">تواصل معنا</a></li>
-  </ul>
+<a href="#">الرئيسية</a>
+<a href="#">المنتجات</a>
+<a href="#">العروض</a>
+<a href="#">تواصل معنا</a>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-text">
-    <h1 class="gradient-text">LADY BAG</h1>
-    <p>أناقة تدوم لكل يوم 💖</p>
-    <p>اكتشفي تشكيلتنا الجديدة من الحقائب بتصميم راقي وجودة عالية</p>
-    <a href="#shop" class="shop-btn">SHOP NOW →</a>
-  </div>
+</header>
 
-  <div class="hero-img">
-  <a href="bag3.png" class="open-img"><img src="bag3.png" class="product-img"></a>
-</div>
-</div>
+<section class="hero">
 
-<!-- PRODUCTS -->
-<div id="shop" class="products">
-  <div class="grid">
+<h2>أفضل العطور الأصلية</h2>
 
-    <div class="card">
-      <a href="IMG_9641.png" class="open-img"><img src="IMG_9641.png" class="product-img"></a>
-      <h3>Lady Bag</h3>
-      <p class="price">LE 350</p>
-      <a class="btn" href="https://wa.me/201023256648">اطلب الآن</a>
-    </div>
+<p>خصومات تصل إلى 50%</p>
 
-    <div class="card">
-      <a href="bag2.jpeg" class="open-img"><img src="bag2.jpeg" class="product-img"></a>
-      <h3>White Bag</h3>
-      <p class="price">LE 899</p>
-      <a class="btn" href="https://wa.me/201023256648">اطلب الآن</a>
-    </div>
+<button onclick="buyNow()">اطلب الآن</button>
 
-    <div class="card">
-      <a href="bag3.jpeg" class="open-img"><img src="bag3.jpeg" class="product-img"></a>
-      <h3>Pink Bag</h3>
-      <p class="price">LE 750</p>
-      <a class="btn" href="https://wa.me/201023256648">اطلب الآن</a>
-    </div>
+</section>
 
-    <div class="card">
-      <a href="bag4.jpeg" class="open-img"><img src="bag4.jpeg" class="product-img"></a>
-      <h3>Mini Bag</h3>
-      <p class="price">LE 650</p>
-      <a class="btn" href="https://wa.me/201023256648">اطلب الآن</a>
-    </div>
+<section class="products">
 
-  </div>
+<div class="card">
+<img src="https://picsum.photos/300/250?1">
+<h3>عطر رجالي</h3>
+<p>سعر المنتج 1200 جنيه</p>
+<button onclick="buyNow()">شراء</button>
 </div>
 
-<!-- ABOUT -->
-<div id="about">
-  <h2 style="color:#e91e63;">من نحن</h2>
-
-  <p style="max-width:600px;margin:auto;color:#444;line-height:1.8;">
-    نحن علامة متخصصة في تقديم أحدث الشنط النسائية العصرية   
-     نؤمن أن الشنطة ليست مجرد إكسسوار، بل تعبير عن أناقتك وشخصيتك 
-    💗
-  </p>
-
-  <p style="max-width:600px;margin:15px auto;color:#444;line-height:1.8;">
-    نحرص على اختيار أفضل الخامات وتقديم تصميمات مميزة تناسب جميع الأذواق،  
-    مع تجربة شراء سهلة وسريعة 
-    ✨
-  </p>
+<div class="card">
+<img src="https://picsum.photos/300/250?2">
+<h3>عطر نسائي</h3>
+<p>سعر المنتج 950 جنيه</p>
+<button onclick="buyNow()">شراء</button>
 </div>
 
-<!-- CONTACT -->
-<div id="contact">
-  <h2 style="color:#e91e63;">تواصل معنا</h2>
-  <p>للطلب أو الاستفسار تواصل معنا على واتساب</p>
-
-  <a href="https://wa.me/201023256648" target="_blank"
-     style="display:inline-block;margin-top:15px;padding:15px 30px;background:#25D366;color:white;border-radius:30px;text-decoration:none;">
-     💬 كلمنا على واتساب
-  </a>
+<div class="card">
+<img src="https://picsum.photos/300/250?3">
+<h3>عطر فاخر</h3>
+<p>سعر المنتج 1800 جنيه</p>
+<button onclick="buyNow()">شراء</button>
 </div>
 
-<div class="lightbox" id="lb"><img id="lbimg"></div>
-<script>
-document.querySelectorAll('.open-img').forEach(a=>{
-a.onclick=e=>{e.preventDefault();lb.style.display='flex';lbimg.src=a.href;}
-});
-lb.onclick=()=>lb.style.display='none';
-</script>
+</section>
+
 <footer>
-© 2026 | Lady Bag Collection
+
+© 2026 جميع الحقوق محفوظة
+
 </footer>
 
-<button id="topBtn">↑</button><script>window.onscroll=()=>topBtn.style.display=scrollY>200?"block":"none";topBtn.onclick=()=>scrollTo({top:0,behavior:"smooth"});document.querySelectorAll(".card").forEach((c,i)=>{c.style.animationDelay=(i*.15)+"s"});</script></body>
+<script>
+
+function buyNow(){
+alert("شكراً لزيارتك متجر العطور 🌹");
+}
+
+</script>
+
+</body>
 </html>
